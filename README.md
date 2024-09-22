@@ -82,10 +82,8 @@
 
 ### [Скрипт оценки результатов](codalab/evaluation.py)
 
-### [Пример посылки](codalab/evaluation.py)
+### [Пример посылки (Скрипт генерации случайной разметки)](tests/test_stress_eval.py)
 
-> **TODO:** Reference the submission file.
- 
 ## Базовый подход
 
 > **TODO:** Baseline Approach Description.
