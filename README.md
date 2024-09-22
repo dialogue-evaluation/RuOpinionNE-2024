@@ -5,11 +5,11 @@
     <img src="logo.png" width="250"/>
 </p>
 
-### [Ссылка на соревнования в системе Codalab]()
+### [Ссылка на соревнования в системе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244)
 
-### [:alarm_clock: Даты и график проведения соревнования]()
+### [:alarm_clock: Даты и график проведения соревнования](https://codalab.lisn.upsaclay.fr/competitions/20244#learn_the_details-terms_and_conditions)
 
-### [:chart_with_upwards_trend:  Таблица результатов]()
+### [:chart_with_upwards_trend:  Таблица результатов](https://codalab.lisn.upsaclay.fr/competitions/20244#results)
 
 ### [:newspaper: Telegram канал соревнований](https://t.me/RuOpinionNE2024)
 
@@ -28,7 +28,7 @@
 
 # Краткое описание 
 
-> ⚠️ **Внимание:** Полное описание представлено **[на платформе Codalab]()**. 
+> ⚠️ **Внимание:** Полное описание представлено **[на платформе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244#learn_the_details-overview)**. 
 > Настоящее описание несет ознакомительный характер.
 
 **RuOpinionNE-2024** является продолжением тестирования [RuSentNE-2023](https://www.dialog-21.ru/evaluation/2023/rusentne/), 
@@ -58,7 +58,7 @@
 
 ## Пример
 
-> ⚠️ **Внимание:** Полное описание форматирования предложений представлено **[на платформе Codalab]()**.
+> ⚠️ **Внимание:** Полное описание форматирования предложений представлено **[на платформе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244#learn_the_details-overview)**.
 > Настоящее описание несет ознакомительный характер.
 
 Для входного предложения и размеченных в нем <ins>именованных сущностей</ins>:
@@ -74,11 +74,11 @@
 * [`train.jsonl`](train.jsonl) -- обучающие данные.
 * [`validation.jsonl`](validation.jsonl) -- данные валидационного этапа.
 
-Полное описание формата представлено **[на платформе Codalab]()**.
+Полное описание формата представлено **[на платформе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244#learn_the_details-overview)**.
 
 # Соревнования на Codalab
 
-### [Полное описание постановки задачи на платформе Codalab]()
+### [Полное описание постановки задачи на платформе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244#learn_the_details-overview)
 
 ### [Скрипт оценки результатов](codalab/evaluation.py)
 
