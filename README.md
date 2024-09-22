@@ -2,7 +2,7 @@
 [![](https://img.shields.io/badge/telegram-blue?logo=telegram)](https://t.me/RuOpinionNE2024)
 
 <p align="center">
-    <img src="logo.png" width="250"/>
+    <a href="https://codalab.lisn.upsaclay.fr/competitions/20244"><img src="logo.png" width="250"/></a>
 </p>
 
 ### [Ссылка на соревнования в системе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244)
