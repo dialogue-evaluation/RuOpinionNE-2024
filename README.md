@@ -1,4 +1,4 @@
-# RuOpinionNE-2024 -- соревнование по извлечению [кортежей мнений](#кортеж-мнения) из русскоязычных новостных текстов
+# RuOpinionNE-2024 -- соревнование по извлечению кортежей мнений из русскоязычных новостных текстов
 [![](https://img.shields.io/badge/telegram-blue?logo=telegram)](https://t.me/RuOpinionNE2024)
 
 <p align="center">
