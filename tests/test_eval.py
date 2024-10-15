@@ -1,7 +1,7 @@
 import sys
 import argparse
 
-sys.path.append("../codalab")
+sys.path.append("..")
 
 from codalab.evaluation import do_eval_core, parse_data
 
