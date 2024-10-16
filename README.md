@@ -1,5 +1,6 @@
 # RuOpinionNE-2024 -- соревнование по извлечению кортежей мнений из русскоязычных новостных текстов
-[![](https://img.shields.io/badge/telegram-blue?logo=telegram)](https://t.me/RuOpinionNE2024)
+[![](https://img.shields.io/badge/telegram-blue?logo=telegram)](https://t.me/RuOpinionNE2024) 
+[![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://x.com/nicolayr_/status/1846614551749337521)
 
 <p align="center">
     <a href="https://codalab.lisn.upsaclay.fr/competitions/20244"><img src="logo.png" width="250"/></a>
