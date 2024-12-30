@@ -74,6 +74,7 @@
 Коллекция включает в себя набор следующих файлов:
 * [`train.jsonl`](train.jsonl) -- обучающие данные.
 * [`validation.jsonl`](validation.jsonl) -- данные валидационного этапа.
+* [`test.jsonl`](test.jsonl) -- данные финального тестирования.
 
 Полное описание формата представлено **[на платформе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244#learn_the_details-overview)**.
 
