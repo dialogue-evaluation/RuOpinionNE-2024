@@ -73,7 +73,7 @@ def do_analysis_a_in_b(a_index, b_index, stat):
 
 
 def submission_name(fp):
-    return basename(fp).split('_')[1].split('.zip')[0]
+    return basename(fp).split('.zip')[0]
 
 
 if __name__ == '__main__':
