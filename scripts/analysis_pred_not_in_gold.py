@@ -2,7 +2,7 @@ import argparse
 from os.path import join
 
 from codalab.evaluation import parse_data
-from scripts.analysis_gold_in_pred import index_submission, do_analysis_a_in_b, submission_name
+from scripts.analysis_gold_in_pred import index_submission, do_analysis_a_in_b, submission_name, render_opinion
 from scripts.utils import iter_dir_filepaths, iter_submission_lines, flatten, dict_dfs_traversal, dict_try_get, \
     dict_register_path, spreadsheet_format_line
 from tests.utils import DATA_DIR
@@ -57,10 +57,16 @@ if __name__ == '__main__':
         with open(f"analysis_pred_not_in_gold_{mode}.tsv", "w") as out:
 
             header = spreadsheet_format_line(["sent_id", "Source", "Target"] +
-                                             [submission_name(fp) for fp in submissions_filepaths])
+                                             [submission_name(fp) for fp in submissions_filepaths] +
+                                             ["rendering"])
 
             out.write(header)
             for registered_opinion, v in dict_dfs_traversal(STAT_PRED_NOT_IN_GOLD):
+
+                pth = registered_opinion[:-1]
+
                 if registered_opinion[-1] != mode:
                     continue
-                out.write(spreadsheet_format_line(registered_opinion[:-1] + v))
+
+                comment = render_opinion(dict_try_get(d=all_pred_gold_missed_index, path=pth), highlight_span=False)
+                out.write(spreadsheet_format_line(pth + v + [comment]))

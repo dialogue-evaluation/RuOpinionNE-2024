@@ -3,6 +3,9 @@ import os
 import json
 
 
+UNKN_ORIGIN = "NULL"
+
+
 def tk(text):
     tokens = text.split()
     token_offsets = []
@@ -46,6 +49,10 @@ def check_opinion_exist(htep, opinions_iter, check_diff_spans_valid_func):
     return exist
 
 
+def parse_span(s):
+    return [int(e) for e in s.split(":")]
+
+
 def convert_char_offsets_to_token_idxs(char_offsets, token_offsets):
     """
     char_offsets: list of str
@@ -62,8 +69,7 @@ def convert_char_offsets_to_token_idxs(char_offsets, token_offsets):
     token_idxs = []
 
     for char_offset in char_offsets:
-        bidx, eidx = char_offset.split(":")
-        bidx, eidx = int(bidx), int(eidx)
+        bidx, eidx = parse_span(char_offset)
         for i, (b, e) in enumerate(token_offsets):
             if b >= eidx or e <= bidx:
                 intoken = False
@@ -90,7 +96,7 @@ def convert_opinion_to_tuple(sentence):
 
             # Compose elements of the new opinion.
             holder = frozenset(["AUTHOR"]) \
-                if holder_char_idxs[0] == "NULL" \
+                if holder_char_idxs[0] == UNKN_ORIGIN \
                 else convert_char_offsets_to_token_idxs(holder_char_idxs, token_offsets)
             target = convert_char_offsets_to_token_idxs(target_char_idxs, token_offsets)
             exp = convert_char_offsets_to_token_idxs(exp_char_idxs, token_offsets)

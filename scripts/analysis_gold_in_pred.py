@@ -1,9 +1,9 @@
 import argparse
 from os.path import join, basename
 
-from codalab.evaluation import parse_data
+from codalab.evaluation import parse_data, parse_span, UNKN_ORIGIN
 from scripts.utils import iter_dir_filepaths, iter_submission_lines, dict_register_path, dict_dfs_traversal, \
-    dict_try_get, spreadsheet_format_line
+    dict_try_get, spreadsheet_format_line, uppercase_substring, bracket_substring
 from tests.utils import DATA_DIR
 
 
@@ -37,6 +37,10 @@ def index_submission(sentences):
             # Save span.
             v["span_value"] = opinion["Polar_expression"][0][0]
             v["span_region"] = opinion["Polar_expression"][1][0]
+            # Other metadata.
+            v["source_region"] = opinion["Source"][1][0]
+            v["target_region"] = opinion["Target"][1][0]
+            v["text"] = sentence["text"]
 
     return index
 
@@ -68,12 +72,35 @@ def do_analysis_a_in_b(a_index, b_index, stat):
         elif key == "span_region":
             stat_span_value = dict_register_path(stat, path_to_node + ["used_span_region"], value_if_not_exist=[])
             stat_span_value.append(b_node["span_region"] if is_exist else '-')
+        elif key in ['source_region', 'target_region', 'text']:
+            pass
         else:
             raise Exception(f"key=`{key}` handler has not been found!")
 
 
 def submission_name(fp):
     return basename(fp).split('.zip')[0]
+
+
+def render_opinion(index_node, highlight_span=True):
+    assert(isinstance(index_node, dict))
+
+    text = index_node["text"]
+    for r in [index_node["source_region"], index_node["target_region"]]:
+
+        # We do not emphasize UNKN.
+        if r == UNKN_ORIGIN:
+            continue
+
+        r_from, r_to = parse_span(r)
+        text = uppercase_substring(s=text, start=r_from, end=r_to)
+
+    # Replacing the span.
+    if highlight_span:
+        r_from, r_to = parse_span(index_node["span_region"])
+        text = bracket_substring(s=text, start=r_from, end=r_to)
+
+    return text
 
 
 if __name__ == '__main__':
@@ -104,10 +131,16 @@ if __name__ == '__main__':
         with open(f"analysis_gold_in_pred_{mode}.tsv", "w") as out:
 
             header = spreadsheet_format_line(["sent_id", "Source", "Target"] +
-                                             [submission_name(fp) for fp in submissions_filepaths])
+                                             [submission_name(fp) for fp in submissions_filepaths] +
+                                             ["rendering"])
 
             out.write(header)
             for registered_opinion, v in dict_dfs_traversal(STAT_GOLD_IN_PRED):
+
+                pth = registered_opinion[:-1]
+
                 if registered_opinion[-1] != mode:
                     continue
-                out.write(spreadsheet_format_line(registered_opinion[:-1] + v))
+
+                comment = render_opinion(dict_try_get(d=gold_index, path=pth))
+                out.write(spreadsheet_format_line(pth + v + [comment]))

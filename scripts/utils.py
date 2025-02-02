@@ -69,3 +69,18 @@ def iter_submission_lines(zip_path):
 
 def flatten(xss):
     return [x for xs in xss for x in xs]
+
+
+def uppercase_substring(s, start, end):
+    assert(isinstance(s, str))
+    if not (0 <= start < len(s)) or not (0 <= end <= len(s)) or start > end:
+        raise ValueError("Invalid start or end indices")
+
+    return s[:start] + s[start:end].upper() + s[end:]
+
+
+def bracket_substring(s, start, end) -> str:
+    if not (0 <= start < len(s)) or not (0 <= end <= len(s)) or start > end:
+        raise ValueError("Invalid start or end indices")
+
+    return s[:start] + "[" + s[start:end] + "]" + s[end:]
