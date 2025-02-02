@@ -52,7 +52,7 @@ if __name__ == '__main__':
         do_analysis_a_in_b(all_pred_gold_missed_index, index_submission(pred), stat=STAT_PRED_NOT_IN_GOLD)
 
     # Output the results.
-    for mode in ["is_exist"]:
+    for mode in ["is_exist", "used_span", "used_span_region"]:
 
         with open(f"analysis_pred_not_in_gold_{mode}.tsv", "w") as out:
 
