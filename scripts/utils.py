@@ -3,7 +3,35 @@ import zipfile
 
 
 def spreadsheet_format_line(args_list, new_line=True):
-    return "\t".join([str(v) for v in args_list]) + "\n" if new_line else ""
+
+    def is_data(v):
+
+        if ":" not in v:
+            return False
+
+        l = v.split(":")
+        if len(l) != 2:
+            return False
+
+        try:
+            _ = int(l[0]), int(l[1])
+        except:
+            return False
+
+        return True
+
+    def __handle(v):
+
+        if v == '+':
+            return "✓"
+        if v == '-':
+            return "⋅"
+        if isinstance(v, str) and is_data(v):
+            return v.replace(':', "⋅")
+
+        return str(v)
+
+    return "\t".join([__handle(v) for v in args_list]) + "\n" if new_line else ""
 
 
 def dict_try_get(d, path, default=None):
