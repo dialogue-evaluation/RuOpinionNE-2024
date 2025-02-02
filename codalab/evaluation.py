@@ -225,17 +225,23 @@ def tuple_f1(gold, pred, keep_polarity=True, weighted=True):
     return 2 * (prec * rec) / (prec + rec + 0.00000000000000001)
 
 
-def parse_data(jsonl_filepath):
+def iter_parsed_json_lines(filepath):
+    """ This is the default iterator of the JSONL content.
+    """
+    with open(filepath, 'r', encoding='utf-8') as infile:
+        return infile.readlines()
+
+
+def parse_data(jsonl_filepath, iter_json_func=None):
     """ Parse competition data.
     """
 
-    def __iter_parsed_json_lines(filepath):
-        with open(filepath, 'r', encoding='utf-8') as infile:
-            for line in infile.readlines():
-                yield json.loads(line)
+    # We use the default parser of the JSON file.
+    iter_json_func = iter_parsed_json_lines \
+        if iter_json_func is None else iter_json_func
 
     # Return list of parsed lines, presented in a form of dictionaries.
-    return list(__iter_parsed_json_lines(filepath=jsonl_filepath))
+    return [json.loads(line) for line in iter_json_func(jsonl_filepath)]
 
 
 def do_eval_core(gold, preds):
