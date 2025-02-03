@@ -3,8 +3,8 @@ from os.path import join
 
 from analysis.utils import ANALYSIS_DIR
 from codalab.evaluation import parse_data
-from scripts.analysis_gold_in_pred import index_submission, do_analysis_a_in_b, submission_name, render_opinion
-from scripts.utils import iter_dir_filepaths, iter_submission_lines, flatten, dict_dfs_traversal, dict_try_get, \
+from analysis.analysis_gold_in_pred import index_submission, do_analysis_a_in_b, submission_name, render_opinion
+from analysis.utils import iter_dir_filepaths, iter_submission_lines, flatten, dict_dfs_traversal, dict_try_get, \
     dict_register_path, spreadsheet_format_line
 from tests.utils import DATA_DIR
 
