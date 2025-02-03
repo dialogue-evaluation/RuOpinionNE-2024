@@ -79,6 +79,9 @@ def convert_char_offsets_to_token_idxs(char_offsets, token_offsets):
                 token_idxs.append(i)
     return frozenset(token_idxs)
 
+POS_LABEL = "POS"
+NEG_LABEL = "NEG"
+
 
 def convert_opinion_to_tuple(sentence):
     text = sentence["text"]
@@ -102,7 +105,7 @@ def convert_opinion_to_tuple(sentence):
             exp = convert_char_offsets_to_token_idxs(exp_char_idxs, token_offsets)
             polarity = opinion["Polarity"]
 
-            assert polarity in ["POS", "NEG"], "wrong polarity mark: {}".format(sentence["sent_id"])
+            assert polarity in [POS_LABEL, NEG_LABEL], "wrong polarity mark: {}".format(sentence["sent_id"])
 
             htep = (holder, target, exp, polarity)
 

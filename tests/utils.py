@@ -32,7 +32,7 @@ def get_random_span(text):
     return text[start:end], f"{start}:{end}"
 
 
-def random_opinion(text, polarities=["POS", "NEG"]):
+def random_opinion(text, polarities):
     ta, a = get_random_span(text)
     tb, b = get_random_span(text)
     tc, c = get_random_span(text)
