@@ -89,7 +89,19 @@
 
 ## Базовый подход
 
-> **TODO:** Baseline Approach Description.
+См. описание в тексте статьи задачи.
+
+## Result Analysis
+
+To evaluate your submissions, you have to navigate to [analysis](./analysis) folder for the related scripts.
+
+**Input**. All the submissions are expected to be placed in [submissions](./analysis/submissions) folder in `.zip` format. 
+
+**Output**. Scripts are dedicated to produce `*.tsv` files suitable for uploading at spreadsheet.
+The `analysis_pretty.py` merges all the prior composed files into a single `*.tsv`.
+
+
+> **Tip:** you can zip labeled data to see the related annotation alongside with your. 
 
 ## Организаторы
 * [Лукашевич Наталья Валентиновна](https://scholar.google.com/citations?user=FKkWXLkAAAAJ&hl=en) (МГУ им. М.В. Ломоносова)

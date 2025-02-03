@@ -1,6 +1,7 @@
 import argparse
 from os.path import join, basename
 
+from analysis.utils import ANALYSIS_DIR
 from codalab.evaluation import parse_data, parse_span, UNKN_ORIGIN
 from scripts.utils import iter_dir_filepaths, iter_submission_lines, dict_register_path, dict_dfs_traversal, \
     dict_try_get, spreadsheet_format_line, uppercase_substring, bracket_substring
@@ -108,8 +109,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser("Analysis of the codalab submissions for RuOpinionNE-2024."
                                      "This script covers presence of the gold data in submissions (pred).")
 
-    parser.add_argument('-g', '--gold', default=join(DATA_DIR, "submissions/test_labeled.jsonl"), type=str)
-    parser.add_argument('-p', '--submissions_dir', default=join(DATA_DIR, "submissions"), type=str)
+    parser.add_argument('-g', '--gold', default=join(DATA_DIR, "./validation_labeled.jsonl"), type=str)
+    parser.add_argument('-p', '--submissions_dir', default=join(ANALYSIS_DIR, "submissions"), type=str)
 
     args = parser.parse_args()
 
