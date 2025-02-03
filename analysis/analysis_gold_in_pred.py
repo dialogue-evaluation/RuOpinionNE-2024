@@ -1,10 +1,9 @@
 import argparse
 from os.path import join, basename
 
-from analysis.utils import ANALYSIS_DIR
-from codalab.evaluation import parse_data, parse_span, UNKN_ORIGIN
-from scripts.utils import iter_dir_filepaths, iter_submission_lines, dict_register_path, dict_dfs_traversal, \
-    dict_try_get, spreadsheet_format_line, uppercase_substring, bracket_substring
+from codalab.evaluation import parse_data, parse_span, UNKN_ORIGIN, POS_LABEL, NEG_LABEL
+from analysis.utils import iter_dir_filepaths, iter_submission_lines, dict_register_path, dict_dfs_traversal, \
+    dict_try_get, spreadsheet_format_line, uppercase_substring, bracket_substring, ANALYSIS_DIR
 from tests.utils import DATA_DIR
 
 
@@ -64,8 +63,13 @@ def do_analysis_a_in_b(a_index, b_index, stat):
             stat_is_exist.append('+' if is_exist else '-')
 
             # register opinion exact match.
+            label_map = {POS_LABEL: "P", NEG_LABEL: "N"}
             stat_is_exist = dict_register_path(stat, path_to_node + ["is_exist_label"], value_if_not_exist=[])
-            stat_is_exist.append('+' if is_exist_label else '-')
+            stat_is_exist.append(
+                '+' if is_exist_label else (
+                    label_map[b_node["label"]] if b_node is not None else '-'
+                )
+            )
         elif key == "span_value":
             # register the span
             stat_span_value = dict_register_path(stat, path_to_node + ["used_span"], value_if_not_exist=[])
