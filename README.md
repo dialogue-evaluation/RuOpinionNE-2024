@@ -93,7 +93,10 @@
 
 ## Result Analysis
 
-To evaluate your submissions, you have to navigate to [analysis](./analysis) folder for the related scripts.
+To evaluate your submissions for the Development stage, you have to navigate to [analysis](./analysis) folder for the related scripts:
+1. `analysis_gold_in_pred.py` -- seeks for the etalon labeling in the submissions.
+2. `analysis_pred_not_in_gold.py` -- seeks for the opinions that are a part of submissions but not presented in etalon labeling.
+3. `analysis_pretty.py` -- merges all the outputs from the (1) and (2) into the pretty format suitable for uploading at Google Spreadsheets.
 
 **Input**. All the submissions are expected to be placed in [submissions](./analysis/submissions) folder in `.zip` format. 
 
