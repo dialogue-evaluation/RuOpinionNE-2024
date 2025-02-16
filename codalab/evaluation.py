@@ -241,16 +241,23 @@ def iter_parsed_json_lines(filepath):
         return infile.readlines()
 
 
-def parse_data(jsonl_filepath, iter_json_func=None):
+def parse_data(jsonl_filepath, iter_json_func=None, handle_lines_func=None):
     """ Parse competition data.
+
+        handle_lines_func: func (optional)
+            final handler of the output lines
     """
+    assert(callable(handle_lines_func) or handle_lines_func is None)
+
+    handle_lines_func = (lambda item: item) if handle_lines_func is None else handle_lines_func
 
     # We use the default parser of the JSON file.
     iter_json_func = iter_parsed_json_lines \
         if iter_json_func is None else iter_json_func
 
     # Return list of parsed lines, presented in a form of dictionaries.
-    return [json.loads(line) for line in iter_json_func(jsonl_filepath)]
+    return [handle_lines_func(json.loads(line))
+            for line in iter_json_func(jsonl_filepath)]
 
 
 def do_eval_core(gold, preds):
