@@ -35,7 +35,7 @@ def spreadsheet_format_line(args_list, new_line=True):
 
         return str(v)
 
-    return "\t".join([__handle(v) for v in args_list]) + "\n" if new_line else ""
+    return "\t".join([__handle(v) for v in args_list]) + ("\n" if new_line else "")
 
 
 def dict_try_get(d, path, default=None):
