@@ -1,9 +1,9 @@
 import os
 import zipfile
-from os.path import dirname, realpath, join
+from os.path import dirname, realpath
 
 current_dir = dirname(realpath(__file__))
-ANALYSIS_DIR = join(current_dir, "../")
+ANALYSIS_DIR = current_dir
 
 
 def spreadsheet_format_line(args_list, new_line=True):
