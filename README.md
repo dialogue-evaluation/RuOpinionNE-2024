@@ -93,6 +93,8 @@
 
 ## Result Analysis
 
+> ⚠️ **Warning:** The opiniong matching algorithm has a different implementaion than one utilized in codalab evaluation script.
+
 To evaluate your submissions for the Development stage, you have to navigate to [analysis](./analysis) folder for the related scripts:
 1. `analysis_gold_in_pred.py` -- seeks for the etalon labeling in the submissions.
 2. `analysis_pred_not_in_gold.py` -- seeks for the opinions that are a part of submissions but not presented in etalon labeling.
