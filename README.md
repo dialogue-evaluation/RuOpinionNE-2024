@@ -1,6 +1,7 @@
 # RuOpinionNE-2024 -- соревнование по извлечению кортежей мнений из русскоязычных новостных текстов
 [![](https://img.shields.io/badge/telegram-blue?logo=telegram)](https://t.me/RuOpinionNE2024) 
 [![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://x.com/nicolayr_/status/1846614551749337521)
+[![arXiv](https://img.shields.io/badge/arXiv-2504.06947-b31b1b.svg)](https://arxiv.org/abs/2504.06947)
 
 <p align="center">
     <a href="https://codalab.lisn.upsaclay.fr/competitions/20244"><img src="logo.png" width="250"/></a>
@@ -28,6 +29,7 @@
 * [Ссылки](#ссылки)
 
 # Краткое описание 
+[![arXiv](https://img.shields.io/badge/arXiv-2504.06947-b31b1b.svg)](https://arxiv.org/abs/2504.06947)
 
 > ⚠️ **Внимание:** Полное описание представлено **[на платформе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244#learn_the_details-overview)**. 
 > Настоящее описание несет ознакомительный характер.
@@ -122,4 +124,14 @@ The `analysis_pretty.py` merges all the prior composed files into a single `*.ts
 
 ## Ссылки
 
-> **TODO:** Paper Reference once issued.
+```bibtex
+@misc{loukachevitch2025ruopinionne2024extractionopiniontuples,
+      title={RuOpinionNE-2024: Extraction of Opinion Tuples from Russian News Texts}, 
+      author={Natalia Loukachevitch and Natalia Tkachenko and Anna Lapanitsyna and Mikhail Tikhomirov and Nicolay Rusnachenko},
+      year={2025},
+      eprint={2504.06947},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2504.06947}, 
+}
+```
