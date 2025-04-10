@@ -7,6 +7,9 @@
     <a href="https://codalab.lisn.upsaclay.fr/competitions/20244"><img src="logo.png" width="250"/></a>
 </p>
 
+> :book: **10 мая 2025:** [опубликована pre-print версия статьи на arXiv](https://arxiv.org/abs/2504.06947) по результатам основного (`final`) этапа соревнований
+
+
 ### [Ссылка на соревнования в системе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244)
 
 ### [:alarm_clock: Даты и график проведения соревнования](https://codalab.lisn.upsaclay.fr/competitions/20244#learn_the_details-terms_and_conditions)
