@@ -4,13 +4,16 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2504.06947-b31b1b.svg)](https://arxiv.org/abs/2504.06947)
 
 <p align="center">
-    <a href="https://codalab.lisn.upsaclay.fr/competitions/20244"><img src="logo.png" width="250"/></a>
+    <a href="https://www.codabench.org/competitions/18622"><img src="logo.png" width="250"/></a>
 </p>
+
+> :book: **16 ноября 2026:** переход на codabench хостинг в связи с закрытием codalab платформы. Соревнования доступны https://www.codabench.org/competitions/18622. История посылок доступна на [legacy codalab](https://codalab.lisn.upsaclay.fr/competitions/20244)
 
 > :book: **10 мая 2025:** [опубликована pre-print версия статьи на arXiv](https://arxiv.org/abs/2504.06947) по результатам основного (`final`) этапа соревнований
 
+### [Ссылка на соревнования в системе CodaBench](https://www.codabench.org/competitions/18622)
 
-### [Ссылка на соревнования в системе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244)
+### ~~[Ссылка на соревнования в системе Codalab](https://codalab.lisn.upsaclay.fr/competitions/20244)~~
 
 ### [:alarm_clock: Даты и график проведения соревнования](https://codalab.lisn.upsaclay.fr/competitions/20244#learn_the_details-terms_and_conditions)
 
